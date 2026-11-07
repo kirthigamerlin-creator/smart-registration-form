@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Registration Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Registration Form</h1>
+        <p class="success hide-class">Registration form has been submitted successfully</p>
+        <form>
+            <div class="form-section">
+                <div class="form-row">
+                    <label>Name:<span class="error">*</span></label>
+                    <input type="text" id="name" placeholder="Enter your name" onblur="checkValidation(event)" />
+                    <p class="error hide-class">Please enter your name</p>
+                </div>
+                <div class="form-row">
+                    <label>Email:<span class="error">*</span></label>
+                    <input type="email" id="email" placeholder="Enter your email" onblur="checkValidation(event)" />
+                    <p class="error hide-class">Please enter your valid email id</p>
+                </div>
+                <div class="form-row">
+                    <label>Password:<span class="error">*</span></label>
+                    <input type="password" id="password" placeholder="Enter your password" onblur="checkValidation(event)" />
+                    <p class="error hide-class">Please enter a valid password with at least 6 characters</p>
+                </div>
+                <div class="form-row">
+                    <label>Confirm password:<span class="error">*</span></label>
+                    <input type="password" id="re-password" placeholder="Confirm password" onblur="checkValidation(event)" />
+                    <p class="error hide-class">Confirm password does not match with your password</p>
+                </div>
+                <div class="form-row">
+                    <label>Bio:<span class="error">*</span></label>
+                    <textarea type="text" id="bio" placeholder="Enter your bio" onblur="checkValidation(event)" onkeyup="updateCharCount()" maxlength="200"></textarea>
+                    <p class="error hide-class">Enter your Bio</p>
+                    <p id="charCount"></p>
+                </div>
+                <div class="form-row">
+                    <button type="button" class="submit" disabled onclick="submitForm()">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="validation.js"></script>
+</body>
+</html>
